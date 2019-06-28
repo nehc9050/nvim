@@ -21,6 +21,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 " Place, toggle, and display marks
 Plug 'kshenoy/vim-signature'
+" Adding surroundings functionality
+Plug 'tpope/vim-surround'
 " Deoplete - autocomplete service
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
