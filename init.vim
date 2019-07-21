@@ -23,6 +23,8 @@ Plug 'tpope/vim-sensible'
 Plug 'kshenoy/vim-signature'
 " Adding surroundings functionality
 Plug 'tpope/vim-surround'
+" Typescript syntax support
+Plug 'leafgarland/typescript-vim'
 " Deoplete - autocomplete service
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -54,6 +56,10 @@ set expandtab
 
 set number
 
+" autocomplete parentheses and brackets, etc.
+:inoremap ( ()<Esc>i
+:inoremap { {}<Esc>i
+:inoremap [ []<Esc>i
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
 
@@ -61,6 +67,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'eslint'],
 \}
 " Error underlining
 let g:ale_set_highlights = 1
@@ -81,3 +88,5 @@ let g:deoplete#enable_at_startup = 1
 
 " Startify settings
 let g:startify_bookmarks = ["~/.config/nvim/init.vim"]
+
+set colorcolumn=80
