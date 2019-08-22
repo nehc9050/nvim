@@ -45,6 +45,7 @@ call plug#end()
 set termguicolors
 " colorscheme monokai_pro
 colorscheme gruvbox
+set background=dark    " Setting dark mode
 
 filetype plugin indent on
 " show existing tab with 2 spaces width
