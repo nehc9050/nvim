@@ -25,6 +25,12 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 " Typescript syntax support
 Plug 'leafgarland/typescript-vim'
+" Flutter/dart support
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+" Fuzzy finder
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 " Deoplete - autocomplete service
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -56,10 +62,11 @@ set expandtab
 
 set number
 
-" autocomplete parentheses and brackets, etc.
-:inoremap ( ()<Esc>i
-:inoremap { {}<Esc>i
-:inoremap [ []<Esc>i
+" " autocomplete parentheses and brackets, etc.
+" :inoremap ( ()<Esc>i
+" :inoremap { {}<Esc>i
+" :inoremap [ []<Esc>i
+
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
 
@@ -90,3 +97,6 @@ let g:deoplete#enable_at_startup = 1
 let g:startify_bookmarks = ["~/.config/nvim/init.vim"]
 
 set colorcolumn=80
+
+" Enables fzf in vim
+set rtp+=/usr/local/opt/fzf
