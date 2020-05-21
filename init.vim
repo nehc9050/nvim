@@ -24,7 +24,11 @@ Plug 'kshenoy/vim-signature'
 " Adding surroundings functionality
 Plug 'tpope/vim-surround'
 " Typescript syntax support
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+" JS support
+Plug 'yuezk/vim-js'
+" jsx syntax highlighting support
+Plug 'maxmellon/vim-jsx-pretty'
 " Flutter/dart support
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
@@ -43,8 +47,6 @@ else
 " Plug 'terryma/vim-multiple-cursors'
 " " Fuzzy file finder
 " Plug 'ctrlpvim/ctrlp.vim'
-" " Extensive surroundings support
-" Plug 'tpop/vim-surround'
 endif
 call plug#end()
 
@@ -94,7 +96,7 @@ let g:rainbow_active = 1
 let g:deoplete#enable_at_startup = 1
 
 " Startify settings
-let g:startify_bookmarks = ["~/.config/nvim/init.vim"]
+let g:startify_bookmarks = ["~/.config/nvim/init.vim", "~/Code/todo.md", "~/.config/sway/config", "~/.zshrc"]
 
 set colorcolumn=80
 
