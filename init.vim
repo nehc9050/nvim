@@ -35,6 +35,8 @@ Plug 'thosakwe/vim-flutter'
 " Fuzzy finder
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+" Vue support
+Plug 'posva/vim-vue'
 " Deoplete - autocomplete service
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -102,3 +104,10 @@ set colorcolumn=80
 
 " Enables fzf in vim
 set rtp+=/usr/local/opt/fzf
+
+" Map gb to list buffers
+map gb :ls<CR>:b<Space>
+" map g[n, p, d] to go to next, previous, or delete buffer
+map gn :bn<CR>
+map gp :bp<CR>
+map gd :bd<CR>
