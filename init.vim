@@ -37,6 +37,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " Vue support
 Plug 'posva/vim-vue'
+" LaTeX support
+Plug 'lervag/vimtex'
 " Buffers instead of tabs
 Plug 'ap/vim-buftabline'
 " Deoplete - autocomplete service
@@ -103,6 +105,9 @@ let g:deoplete#enable_at_startup = 1
 let g:startify_bookmarks = ["~/.config/nvim/init.vim", "~/Code/todo.md", "~/.config/sway/config", "~/.zshrc"]
 
 set colorcolumn=80
+
+" Set vimtex flavor
+let g:tex_flavor = 'latex'
 
 " Enables fzf in vim
 set rtp+=/usr/local/opt/fzf
