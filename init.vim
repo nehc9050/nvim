@@ -42,18 +42,14 @@ Plug 'lervag/vimtex'
 " Buffers instead of tabs
 Plug 'ap/vim-buftabline'
 " Deoplete - autocomplete service
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" clang extension for deoplete
+Plug 'deoplete-plugins/deoplete-clang'
 " " Some extensions for down the road downloading
 " " Multiple cursors
 " Plug 'terryma/vim-multiple-cursors'
 " " Fuzzy file finder
 " Plug 'ctrlpvim/ctrlp.vim'
-endif
 call plug#end()
 
 set termguicolors
@@ -78,12 +74,22 @@ set number
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
 
-" Specifcies fixers for each language
+" Specifies fixers for each language
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \   'typescript': ['prettier', 'eslint'],
+\   'cpp': ['clang-format'],
+\   'c': ['clang']
 \}
+
+" Linters
+let g:ale_linters = { 'cpp': ['clang', 'g++'], 'c': ['clang'] }
+
+" Other stuff
+let g:ale_cpp_gcc_options = '-std=c++17 -Wall'
+let g:ale_cpp_clang_options = '-std=c++17 -Wall'
+
 " Error underlining
 let g:ale_set_highlights = 1
 let g:ale_set_signs = 1
@@ -100,6 +106,7 @@ let g:rainbow_active = 1
 " Use deoplete.
 " See :help deoplete-options for a complete list of options
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#clang#std = {'c': 'c11', 'cpp': 'c++17'}
 
 " Startify settings
 let g:startify_bookmarks = ["~/.config/nvim/init.vim", "~/Code/todo.md", "~/.config/sway/config", "~/.zshrc"]
